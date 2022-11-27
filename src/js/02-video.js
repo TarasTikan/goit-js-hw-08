@@ -7,7 +7,11 @@ player.on('timeupdate', throttle(onPlay, 1000));
 function onPlay (data) {
     localStorage.setItem("videoplayer-current-time", data.seconds);
   }
-if (!localStorage) {
-  !player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
-}
-// player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+
+  if(!localStorage) {
+    !player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+  } else if (localStorage.getItem("videoplayer-current-time")) {
+    player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+  }
+  // player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+// console.log(localStorage.clear())
