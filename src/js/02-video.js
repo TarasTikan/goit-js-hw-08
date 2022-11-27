@@ -8,9 +8,7 @@ function onPlay (data) {
     localStorage.setItem("videoplayer-current-time", data.seconds);
   }
 
-  if(!localStorage) {
-    !player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
-  } else if (localStorage.getItem("videoplayer-current-time")) {
+ if (localStorage.getItem("videoplayer-current-time")) {
     player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
   }
   // player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
